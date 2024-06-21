@@ -14,7 +14,7 @@ const Show = () => {
   const [selectedSeason, setSelectedSeason] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [playingEpisode, setPlayingEpisode] = useState(null);
-  const [favorites, setFavorites] = useState({}); // State to manage favorite episodes
+  const [favorites, setFavorites] = useState({}); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +35,7 @@ const Show = () => {
   const handleSeasonSelect = (seasonNumber) => {
     setSelectedSeason(seasonNumber);
     setOpenDropdown(openDropdown === seasonNumber ? null : seasonNumber);
-    setPlayingEpisode(null); // Reset playing episode when selecting a new season
+    setPlayingEpisode(null);
   };
 
   const playEpisode = (episodeId) => {
@@ -95,7 +95,7 @@ const Show = () => {
                             />
                           </div>
                           <AudioPlayer
-                            key={episode.id} // Unique key for AudioPlayer
+                            key={episode.id}
                             src={episode.audioSrc}
                             isPlaying={playingEpisode === episode.id}
                             onPlay={() => playEpisode(episode.id)}

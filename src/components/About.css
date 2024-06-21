@@ -1,10 +1,8 @@
-/* about.css */
-
 .about {
     max-width: 800px;
     margin: 20px auto;
     padding: 30px;
-    background-color: #f5f5f5; /* Keeping the background color */
+    background-color: #f5f5f5; 
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -33,7 +31,7 @@
   
   .about p:first-of-type::first-letter {
     font-size: 3rem;
-    color: #6294f0;
+    color: #049bff82;
     float: left;
     margin-right: 5px;
     line-height: 1;
@@ -41,7 +39,7 @@
   
   .about p::first-letter {
     font-size: 3rem;
-    color: #f06292;
+    color:#049bff82;
     float: left;
     margin-right: 5px;
     line-height: 1;

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPreviews } from '../services/PodcastService.js';
 import { useFavorites } from '../contexts/FavouriteContext.jsx';
-import AudioPlayer from './AudioPlayer'; 
 import './Home.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 
@@ -14,7 +13,7 @@ const Home = () => {
   const [sortCriteria, setSortCriteria] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('All');
-  const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
 
   const genres = {
     1: 'Personal Growth',
@@ -158,13 +157,10 @@ const Home = () => {
                 <Link to={`/show/${podcast.id}`} className="podcast-link">
                   {podcast.title}
                 </Link>
-              </h3>
-              {/* Access nested properties */}
-              <p>Author: {podcast.author}</p>               
+              </h3>                          
               <p>Genre: {podcast.genres.map(genreId => genres[genreId]).join(', ')}</p> 
-              <p>Last Update: {formatDate(podcast.updated)}</p> 
-              <div className="action-buttons">
-                <AudioPlayer src={podcast.audioSrc} />
+              <p>Updated: {formatDate(podcast.updated)}</p> 
+              <div className="action-buttons">              
                 <i
                   className={`fas fa-heart ${isFavorite(podcast.id) ? 'favorite-icon favorite' : 'favorite-icon'}`}
                   onClick={() => handleFavoriteToggle(podcast)}

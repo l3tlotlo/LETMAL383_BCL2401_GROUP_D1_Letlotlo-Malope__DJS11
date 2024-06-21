@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import Episode from './Episode';  
 
 const Season = ({ season, onPlay, onPause }) => {
@@ -16,7 +16,7 @@ const Season = ({ season, onPlay, onPause }) => {
             />
           ))
         ) : (
-          <li>This season does not have any episodes yet</li>
+          <li>This season does not have any episodes</li>
         )}
       </ul>
     </div>

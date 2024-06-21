@@ -1,7 +1,9 @@
-import { useRef, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+import { useRef, useEffect, useState } from 'react';
 
-const AudioPlayer = ({ src, isPlaying, onPlay, onPause }) => {
+const AudioPlayer = ({ src, onPlay, onPause }) => {
   const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const audioElement = audioRef.current;
@@ -28,6 +30,16 @@ const AudioPlayer = ({ src, isPlaying, onPlay, onPause }) => {
     };
   }, [src, isPlaying]);
 
+  const handlePlay = () => {
+    setIsPlaying(true);
+    onPlay(); // Invoke the onPlay prop if provided
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+    onPause(); // Invoke the onPause prop if provided
+  };
+
   useEffect(() => {
     const audioElement = audioRef.current;
 
@@ -48,9 +60,9 @@ const AudioPlayer = ({ src, isPlaying, onPlay, onPause }) => {
     <div className="audio-player">
       <audio ref={audioRef} src={src} />
       {isPlaying ? (
-        <button onClick={onPause}>Pause</button>
+        <button onClick={handlePause}>Pause</button>
       ) : (
-        <button onClick={onPlay}>Play</button>
+        <button onClick={handlePlay}>Play</button>
       )}
     </div>
   );

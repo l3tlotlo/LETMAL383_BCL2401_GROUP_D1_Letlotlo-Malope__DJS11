@@ -1,6 +1,3 @@
-// src/components/Yourfav.jsx
-
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useFavorites } from '../contexts/FavouriteContext';
 import './Header.css';
@@ -8,10 +5,8 @@ import './Header.css';
 const Yourfav = () => {
   const { favorites, removeFavorite } = useFavorites();
 
-  // Convert favorites object to an array of values
   const favoriteEpisodes = Object.values(favorites);
 
-  // Check if there are no favorite episodes
   if (favoriteEpisodes.length === 0) {
     return <div>You have not added any faves.</div>;
   }
