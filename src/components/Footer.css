@@ -1,0 +1,28 @@
+/* src/components/Footer.css */
+
+.footer {
+    background-color: #121212; 
+    color:#5181a29d; 
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99999;
+    box-shadow: 0 -2px 10px rgba(108, 189, 200, 0.492); 
+  }
+  
+  .footer-content {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  
+  .footer a {
+    color:#5181a29d;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+  }
+  
+
+  
