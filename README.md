@@ -11,11 +11,13 @@ This Podcast App, built with React, enables users to search for podcasts, filter
 - **Interactive UI**: Includes buttons and hover effects for enhanced interaction.
 - Sorting by ascending or descending alphabetigal order as well as date.
 - Favourites can be added and removed
+- Password protected account
 
 ## Netlify link
  https://wirelesscast.netlify.app 
 
 ## Directory Structure
+API is fetched in PodcastService.js
 JSX files have code and the styling is in a separate CSS file named similar to corresponding JSX
 
 ## Login Credentials
